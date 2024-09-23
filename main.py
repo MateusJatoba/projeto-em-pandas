@@ -7,7 +7,7 @@ datas = []
 
 
 url = 'https://api.api-futebol.com.br/v1/campeonatos/2/tabela'
-API_KEY = '$$$$'
+API_KEY = '$$$$' # chave api particular
 
 headers = {
     'Authorization' : f'Bearer {API_KEY}',
@@ -18,7 +18,6 @@ response = requests.get(url=url , headers=headers)
 
 
 if response.status_code == 200:
-    # Imprimindo a resposta em formato JSON
     dicionario = response.json()
     for times in dicionario:
 
@@ -42,7 +41,7 @@ if response.status_code == 200:
         # print(dicionario)
         
 else:
-    # Caso haja erro, imprime o código de status e a resposta de erro
+    
     print(f"Erro: {response.status_code}")
     print(response.text)
 
